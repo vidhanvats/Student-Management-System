@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Students</title>
+    <link rel="stylesheet" href="../css/manage-students.css">
+</head>
+<body>
+<div class="container">
+    <h1>Manage Students</h1>
+
+    <div class="top-bar">
+        <input type="text" id="searchInput" placeholder="Search by name/email/course" />
+        <button id="searchButton">Search</button>
+        <button onclick="openModal()" class="btn-add-student">+ Add Student</button>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody id="studentTableBody">
+        <!-- Student rows will be dynamically inserted here -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Add Student Modal -->
+<div id="addStudentModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Add Student</h2>
+        <form id="addStudentForm">
+            <label for="studentName">Name</label>
+            <input type="text" id="studentName" placeholder="Enter full name" required>
+
+            <label for="studentEmail">Email</label>
+            <input type="email" id="studentEmail" placeholder="Enter email" required>
+
+            <label for="studentCourse">Course</label>
+            <input type="text" id="studentCourse" placeholder="Enter course" required>
+
+            <label for="studentPhone">Phone</label>
+            <input type="tel" id="studentPhone" placeholder="10-digit phone number" required pattern="[0-9]{10}">
+
+            <button type="submit" class="btn-submit">Add Student</button>
+        </form>
+    </div>
+</div>
+<!-- Edit Student Modal -->
+<div id="editStudentModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeEditModal()">&times;</span>
+        <h2>Edit Student</h2>
+        <form id="editStudentForm">
+            <input type="hidden" id="editStudentId" />
+            <input type="text" id="editStudentName" placeholder="Name" required />
+            <input type="email" id="editStudentEmail" placeholder="Email" required />
+            <input type="text" id="editStudentCourse" placeholder="Course" required />
+            <input type="text" id="editStudentPhone" placeholder="Phone" required />
+            <button type="submit">Update Student</button>
+        </form>
+    </div>
+</div>
+<!---pagination ---->
+<div id="pagination"></div>
+
+
+<script src="../js/manage-students.js"></script>
+</body>
+</html>

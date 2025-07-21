@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/admin-dashboard.css" />
+    <script defer src="../js/admin-dashboard.js"></script>
+</head>
+<body>
+<div class="dashboard-container">
+    <!-- Header -->
+    <header class="dashboard-header">
+        <h1>Admin Dashboard</h1>
+        <button class="logout-btn" onclick="logout()">
+            <span>Logout</span>
+            <i class="logout-icon">⎋</i>
+        </button>
+    </header>
+
+    <!-- Dashboard Cards -->
+    <div class="dashboard-grid">
+        <div class="card" data-page="manage-students.html" data-desc="Add, edit, or remove student records.">
+            👨‍🎓<span class="card-label">Manage Students</span>
+        </div>
+        <div class="card" data-page="manage-teachers.html" data-desc="Manage teacher profiles and assignments.">
+            👩‍🏫<span class="card-label">Manage Teachers</span>
+        </div>
+        <div class="card" data-page="courses.html" data-desc="Create and organize course materials.">
+            📚<span class="card-label">Courses</span>
+        </div>
+        <div class="card" data-page="reports.html" data-desc="View performance and activity reports.">
+            📊<span class="card-label">Reports</span>
+        </div>
+        <div class="card" data-page="user-accounts.html" data-desc="Handle student, teacher, and admin accounts.">
+            👤<span class="card-label">User Accounts</span>
+        </div>
+        <div class="card" data-page="attendance.html" data-desc="Track and manage student attendance.">
+            🗓️<span class="card-label">Attendance</span>
+        </div>
+        <div class="card" data-page="timetable.html" data-desc="Manage class timings and schedules.">
+            🕒<span class="card-label">Timetable</span>
+        </div>
+        <div class="card" data-page="settings.html" data-desc="Customize settings for your system.">
+            ⚙️<span class="card-label">Settings</span>
+        </div>
+    </div>
+
+    <!-- Card Hover Description -->
+    <div class="card-description" id="card-description">
+        Hover over a card to see details here.
+    </div>
+</div>
+</body>
+</html>
